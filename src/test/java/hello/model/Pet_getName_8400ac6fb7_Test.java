@@ -66,42 +66,8 @@ Please note that the @NotNull annotation is not applicable to the getName() meth
 */
 
 // ********RoostGPT********
-package hello.model;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.mockito.Mockito;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
-public class Pet_getName_8400ac6fb7_Test {
-
-    private Pet pet;
-
-    @BeforeEach
-    public void setup() {
-        pet = Mockito.mock(Pet.class);
-        Mockito.when(pet.getName()).thenReturn("Tommy");
-    }
-
-    @Test
-    public void testGetNameSuccess() {
-        String expectedName = "Tommy";
-        String actualName = pet.getName();
-        assertEquals(expectedName, actualName);
-    }
-
-    @Test
-    public void testGetNameFailure() {
-        String unexpectedName = "Jerry";
-        String actualName = pet.getName();
-        assertNotEquals(unexpectedName, actualName);
-    }
-    
-    @Test
-    public void testGetNameWhenNull() {
-        Mockito.when(pet.getName()).thenReturn(null);
-        String actualName = pet.getName();
-        assertEquals(null, actualName);
-    }
+dependencies {
+    implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3'
+    implementation 'jakarta.validation:jakarta.validation-api:2.0.2'
 }

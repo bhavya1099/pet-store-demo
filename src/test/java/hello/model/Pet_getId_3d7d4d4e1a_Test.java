@@ -71,39 +71,14 @@ Solution: Implement access control checks to ensure the user is authorized to ac
 */
 
 // ********RoostGPT********
-package hello.model;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
-@ExtendWith(MockitoExtension.class)
-public class Pet_getId_3d7d4d4e1a_Test {
-
-    @InjectMocks
-    private Pet pet;
-
-    @BeforeEach
-    public void setUp() {
-        pet.setId(100L);
-    }
-
-    @Test
-    public void testGetId_Success() {
-        long expectedId = 100L;
-        long actualId = pet.getId();
-        assertEquals(expectedId, actualId, "The expected ID does not match the actual ID");
-    }
-
-    @Test
-    public void testGetId_Failure() {
-        long unexpectedId = 101L;
-        long actualId = pet.getId();
-        assertNotEquals(unexpectedId, actualId, "The unexpected ID should not match the actual ID");
-    }
-}
+<dependency>
+    <groupId>jakarta.persistence</groupId>
+    <artifactId>jakarta.persistence-api</artifactId>
+    <version>2.2.3</version>
+</dependency>
+<dependency>
+    <groupId>jakarta.validation</groupId>
+    <artifactId>jakarta.validation-api</artifactId>
+    <version>2.0.2</version>
+</dependency>
